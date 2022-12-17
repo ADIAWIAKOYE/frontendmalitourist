@@ -1,0 +1,334 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Float four columns side by side */
+  .column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding in columns */
+  .row1
+   {
+    display: flex;
+    justify-content: center;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    flex-wrap: wrap;
+    width: 95%;
+    padding-top: 100px;
+    margin: 0 -10px; 
+    /* background-color: bisque; */
+}
+  
+  /* Clear floats after the columns */
+  .row1:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the counter cards */
+  .card1 {
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    
+    border-radius: 20px;
+    background-color: #D9D9D9;
+  }
+  .card1 .con{
+   font-weight: 700;
+   margin-top: 2%;
+   margin-left: 4%;
+  } 
+  .card1 .icond{
+    margin-top: 2%;
+    margin-left: 2%;
+    border-radius: 100%;
+  }
+  .icond .cercles{
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+  }
+  .icond .cerclep{
+    background-color: #F29942;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+  }
+  .icond .cercler{
+    background-color: green;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+  }
+  .card1 .con .cont{
+    background-color: red;
+
+  }
+  .fa{
+    color:#ffffff;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+    margin-right: 10px;
+  }
+ em {
+    line-height: 50px;
+    margin-left: 6px;
+}
+  .card1 .con .icon{
+    background-color:goldenrod;
+  }
+
+  /* Responsive columns - one column layout (vertical) on small screens */
+  @media (max-width: 1199px) {
+    .card1 .con{
+      font-weight: 500;
+      margin-top: 2%;
+      margin-left: -2%;
+     } 
+     .card1 .icond{
+       margin-top: 2%;
+       margin-left: 4%;
+       border-radius: 100%;
+     }
+  }
+  @media (max-width: 999px) {
+
+    .icond .cercles{
+      background-color: red;
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+    }
+    .icond .cerclep{
+      background-color: #F29942;
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+    }
+    .icond .cercler{
+      background-color: green;
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+    }
+    .card1 .con .cont{
+      background-color: red;
+  
+    }
+    .fa{
+      color:#ffffff;
+      position: absolute;
+      height: 30px;
+      width: 30px;
+      text-align: center;
+      font-size: 20px;
+      margin-right: 10px;
+    }
+   em {
+      line-height: 40px;
+      margin-left: 6px;
+  }
+  .card1 .con{
+    font-weight: none;
+    margin-top: 2%;
+    margin-left: -2%;
+   }
+  }
+  @media (max-width: 977px) {
+
+     .card1 .con{
+      width: 100%;
+      text-align: center;
+     }  
+
+    .icond{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+    
+    }
+
+  }
+  @media (max-width: 670px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+     .card1 .con{
+
+      width: 50%;
+        font-weight: 700;
+        margin-top: 2%;
+        margin-left: 4%;
+       } 
+       .card1 .icond{
+        width: 50%;
+         margin-top: 2%;
+         margin-left: 2%;
+         border-radius: 100%;
+       }
+       .icond .cercles{
+         background-color: red;
+         width: 50px;
+         height: 50px;
+         border-radius: 100%;
+       }
+       .icond .cerclep{
+         background-color: #F29942;
+         width: 50px;
+         height: 50px;
+         border-radius: 100%;
+       }
+       .icond .cercler{
+         background-color: green;
+         width: 50px;
+         height: 50px;
+         border-radius: 100%;
+       }
+       .card1 .con .cont{
+         background-color: red;
+     
+       }
+       .fa{
+         color:#ffffff;
+         position: absolute;
+         height: 40px;
+         width: 40px;
+         text-align: center;
+         font-size: 30px;
+         margin-right: 10px;
+       }
+      em {
+         line-height: 50px;
+         margin-left: 6px;
+     
+    }
+
+    .card1 {
+      display: grid;
+    grid-template-columns: auto auto;
+    }
+    .card1 .con{
+       width: 100%;
+      padding-left: 10px;
+      display: flex;
+      justify-content: center;
+      
+      
+     } 
+     p {
+      margin-top: 4px;
+      margin-bottom: 1rem;
+      text-align: left;
+     }
+     .card1 .icond{
+      /* padding-left: 30px; */
+      width: 100%;
+      /* padding-right: 20px; */
+      margin-top: -6px;
+      margin-left: 0%;
+      display: flex;
+      justify-content: center;
+      
+     }
+
+     .icond .cercles{
+     position: relative;
+     top: 20px;
+    }
+    .icond .cerclep{
+      position: relative;
+      top: 20px;
+      
+    }
+    .icond .cercler{
+      position: relative;
+     top: 20px;
+    
+    }
+
+    .fa{
+      color:#ffffff;
+      position: absolute;
+      height: 30px;
+      width: 30px;
+      text-align: center;
+      font-size: 25px;
+      padding-left: 5px;
+    }
+   em {
+      line-height: 40px;
+      position: relative;
+     top: 5px;
+  }
+  }
+
+
+
+
+
+  
+  .wrapper{
+    height:480px;
+     /* position:relative;  */
+       margin-top: 10px; 
+    /* padding-top: 20px; */
+    width:90%;
+    margin: auto;
+    background: url("../../assets/tourisme/Great-Mosque-Djenne-Mali.jpg");
+    background-size: cover;
+    border-radius: 31px;
+    background-repeat: no-repeat;
+  }
+
+  .wrapper .contenu{
+    /* position: relative; */
+    margin-top: 2%;
+    padding-top: 5%; 
+ text-align: center;
+}
+h2{
+  color: #000;
+  font-weight: bold;
+}
+
+.bouton{
+  /* position: relative; */
+  margin-top: 5%;
+  text-align: center;
+}
+.bouton a{
+  background: #954A02;
+  width: 15%;
+  border-radius: 40px;
+}
+.btn{
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+@media (max-width: 670px) {
+
+  .bouton a{
+    width: 50%;
+    
+  }
+  .wrapper{
+    height:400px;
+  }
+
+}
