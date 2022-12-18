@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { ConnexionComponent } from './connexion/connexion.component';
+import { DetailregionComponent } from './detailregion/detailregion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { RegionComponent } from './region/region.component';
 
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path:"region",
     component:RegionComponent
+  },
+  {
+    path:"detailregion",
+    component:DetailregionComponent
   },
 ];
 

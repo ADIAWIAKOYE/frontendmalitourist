@@ -7,6 +7,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { ConnexionComponent } from "./connexion/connexion.component";
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { RegionComponent } from './region/region.component';
+import { DetailregionComponent } from './detailregion/detailregion.component';
 
 @NgModule({
     declarations: [
@@ -14,7 +15,8 @@ import { RegionComponent } from './region/region.component';
         InscriptionComponent,
         ConnexionComponent,
         AcceuilComponent,
-        RegionComponent
+        RegionComponent,
+        DetailregionComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
