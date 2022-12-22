@@ -25,6 +25,9 @@ export class RegionComponent implements OnInit {
   nomPAYS: any;
   lanparleREGION: any;
   habitantHABITANT: any;
+  descriptionREGION: any;
+  doactiviteREGION: any;
+  superficieREGION: any;
 
 
      constructor( private service : RegionService, private formB: FormBuilder) { }
@@ -33,6 +36,10 @@ export class RegionComponent implements OnInit {
       this.service.getRegion().subscribe(data=>{
         this.regions=data;
         console.log("la region est"+data)
+
+        console.log("le message region est"+data.message)
+
+
         
       });
 
@@ -128,6 +135,9 @@ console.log("le nom est    "+this.nomREGION)
 this.codeREGION = this.formulaire!.get("coderegion")!.value
 console.log("le code est    "+this.codeREGION)
 
+this.doactiviteREGION = this.formulaire!.get("doactivite")!.value
+console.log("le doactivite est    "+this.doactiviteREGION)
+
 this.nomPAYS = this.formulaire!.get("nompays")!.value
 console.log("le nompays est     "+this.nomPAYS)
 
@@ -137,64 +147,22 @@ console.log("le lanparle est    "+this.lanparleREGION)
 this.habitantHABITANT = this.formulaire!.get("nbhabitant")!.value
 console.log("le habitant est    "+this.habitantHABITANT)
 
-// for(let idpays of this.nompays)
-// this.recuperepays = idpays;
+this.descriptionREGION = this.formulaire!.get("description")!.value
+console.log("le description est    "+this.descriptionREGION)
+
+this.superficieREGION = this.formulaire!.get("superficie")!.value
+console.log("le superficie est    "+this.superficieREGION)
 
 
-  // data.append("file",this.file)
-
-  // console.log(data)
-  this.service.ajouterRegion(this.regionobjet.coderegion, this.regionobjet.nomregion, this.regionobjet.doactivite, this.regionobjet.lanparle, this.regionobjet.superficie, this.regionobjet.description,  this.nomPAYS, this.habitantHABITANT, this.file).subscribe(data => {
+  this.service.ajouterRegion(this.codeREGION, this.nomREGION, this.doactiviteREGION, this.lanparleREGION, this.superficieREGION, this.descriptionREGION,  this.nomPAYS, this.habitantHABITANT, this.file).subscribe(data => {
       this.formulaire.reset()
-      // this.messages = "entite ajouter avec succes";
-      this.message = data.contenu;
+     
+      this.message = data.Message;
       
-      console.log("---------------------------------"+data)
+      console.log("---------------------------------"+this.message)
   })
      this.resetForm()
 }
-
-
-
-
-// regioncreer() {
-//   this.fichier = this.formulaire.value
-
-//   this.regionobjet.description = this.description;
-
-//   this.regionobjet.nomregion = this.nomregion;
-
-//   this.regionobjet.doactivite = this.doactivite; 
-
-//   this.regionobjet.lanparle = this.lanparle;
-
-//   this.regionobjet.superficie = this.superficie;
-
-//   this.regionobjet.coderegion = this.coderegion; 
-
-//   this.paysObjet.nompays = this.nompays; 
-
-
-//   console.log(this.fichier.imageregion)
-
-
-//   this.service.ajouterRegion(this.nomregion, this.description, this.nbhabitant, this.doactivite, this.lanparle, this.superficie, this.coderegion, this.paysObjet.nompays, this.fichier.file).subscribe(data => {
-
-//     console.log(data)
-
-
-
-//      if(data.Status == 200){
-//        this.route.navigateByUrl("/gestionentite")
-//      }
-
-//     this.formulaire.reset()
-//   })
-
-//   this.resetForm();
- 
-// }
-
 
 
 

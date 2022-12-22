@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Region } from '../Modules/region';
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +18,18 @@ export class RegionService {
     return this.http.get(`http://localhost:8080/region/readregion`);
   }
 
+
   getPays():Observable<any>
   {
     console.log("------------------------------")
     return this.http.get(`http://localhost:8080/Pays/read`);
+  }
+
+
+  getRegionID(idregion:any):Observable<any>
+  {
+    console.log("------------------------------"+idregion)
+    return this.http.get(`http://localhost:8080/region/listeRegionID/${idregion}`);
   }
 
 
@@ -43,9 +52,10 @@ export class RegionService {
     return this.http.post<any>(`http://localhost:8080/region/createregiontrue/${nompays}`, data);
   }
 
-//======================Ajouter habitant=================
+//======================get habitant par id region=================
 
-// posthabitant(nomregion: string, habitant: Habitant){
-//   return this.http.post<Habitant>(`http://localhost:8080/Habitant/createHabitant/${nomregion}`, habitant);
-// }
+ gethabitantidregion(idregion: any):Observable<any>
+ {
+   return this.http.get<any>(`http://localhost:8080/Habitant/readHabitanttt/${idregion}`);
+ }
 }
