@@ -8,6 +8,9 @@ import { ConnexionComponent } from "./connexion/connexion.component";
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { RegionComponent } from './region/region.component';
 import { DetailregionComponent } from './detailregion/detailregion.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RegionService } from './services/region.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 
 @NgModule({
     declarations: [
@@ -16,14 +19,17 @@ import { DetailregionComponent } from './detailregion/detailregion.component';
         ConnexionComponent,
         AcceuilComponent,
         RegionComponent,
-        DetailregionComponent
+        DetailregionComponent,
+        
     ],
-    providers: [],
+    providers: [RegionService],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
-       
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule  
     ]
 })
 export class AppModule { }
