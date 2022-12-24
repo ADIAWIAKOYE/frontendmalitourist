@@ -35,7 +35,7 @@ export class ConnexionComponent {
     this.authService.login(this.form.username, this.form.password).subscribe(
       data => {
         this.tokenStorage.saveToken(data.accessToken);
-        this.tokenStorage.saveUser(data);
+        this.tokenStorage.saveUser(this.form.username);
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;

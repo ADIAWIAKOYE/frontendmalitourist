@@ -20,3 +20,8 @@ export class Pays {
     nompays!: string;
 }
 
+export class Commentaire {
+    idcommentaire!: number;
+    contenu!: string;
+}
+

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Region } from '../Modules/region';
+import { Commentaire, Region } from '../Modules/region';
 
 @Injectable({
   providedIn: 'root'
@@ -58,4 +58,28 @@ export class RegionService {
  {
    return this.http.get<any>(`http://localhost:8080/Habitant/readHabitanttt/${idregion}`);
  }
+
+
+ postCommentaire(nomregion: any, nom: any, commentaire: any):Observable<any>{
+ let data = {
+    "contenu":commentaire
+    }
+
+    console.log("---------------------------------"+data)
+
+  return this.http.post<any>(`http://localhost:8080/commentaire/createcommentaire/${nomregion}/${nom}`, data);
+  
+ }
+
+ getcommentaireidregion(idregion: any):Observable<any>
+ {
+   return this.http.get<any>(`http://localhost:8080/commentaire/readCommentairett/${idregion}`);
+ }
+
+
+ getnbcommentaireidregion(idregion: any):Observable<any>
+ {
+   return this.http.get<any>(`http://localhost:8080/commentaire/readCommentairenombre/${idregion}`);
+ }
+
 }

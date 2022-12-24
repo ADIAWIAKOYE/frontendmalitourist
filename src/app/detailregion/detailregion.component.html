@@ -52,13 +52,13 @@
 
     <div class="form-item">
         <div class="form-group">
-            <textarea name="text" class="form-control" id="" placeholder="Commentaire"></textarea>
+            <textarea name="contenu" [(ngModel)]="contenu" class="form-control" id="" placeholder="Commentaire"></textarea>
         </div>
     </div>
 
     <div class="buttonc">
         <div class="btnmodic">
-            <a href="#about" class="btnt">Commenter</a>
+            <a type="submit" (click)="commenter()" class="btnt">Commenter</a>
         </div>
     
         <div class="btnsuppc">
@@ -73,22 +73,22 @@
         <div class="row">
             <div class="col-md-8">
               <div class="page-header">
-                <h1><small class="pull-right">45</small> Commentaires </h1>
+                <h1><small class="pull-right">{{nbcommentaire}}</small> Commentaires </h1>
               </div> 
                <div class="comments-list">
-                <div class="media">
+                <div class="media" *ngFor="let commentaires of commentaire">
                     <div class="fet">
                         <div class="img">
                           <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar"  width="50px" height="50px">
                         </div>
                         <div class="name">
-                          <h3 class="media-name">Baltej Singh</h3>
+                          <h3 class="media-name">{{commentaires.appUser.nom}}</h3>
                         </div>
                     </div>
-                         <p>Wow! this is really great.</p>   
+                         <p>{{commentaires.contenu}}.</p>   
                  </div>
 
-                 <div class="media">
+                 <!-- <div class="media">
                     <div class="fet">
                         <div class="img">
                           <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar"  width="50px" height="50px">
@@ -110,7 +110,7 @@
                         </div>
                     </div>
                          <p>Wow! this is really great.</p>   
-                 </div>
+                 </div> -->
                       
                </div>
                 
